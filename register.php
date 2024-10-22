@@ -3,13 +3,14 @@
 
   <?php 
     require_once "head-tag.php"; 
-   
-  //  $errors = $_SESSION['errors'] ?? [];
-  if (!isset($_SESSION)) session_start();
+    require_once "Middleware.php"; 
+
+    use OOP\Middleware;
+
+  (new Middleware())->guest();
+  //  $errors = $_SESSION['errors'] ?? []; 
   
   $errors = $_SESSION['errors'] ?? [];
- 
-  // print_r($errors);
   
   ?>
 

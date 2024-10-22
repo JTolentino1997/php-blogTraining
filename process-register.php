@@ -7,7 +7,9 @@ use OOP\ProcessRegister;
 
 $processRegisterClass = new ProcessRegister(); 
  
-$processRegisterClass->validate(); 
+$processRegisterClass->
+->authorization()
+->validate(); 
 
 // $processRegisterClass->save();
 // $processRegisterClass->authentication();
