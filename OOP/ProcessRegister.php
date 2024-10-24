@@ -3,11 +3,16 @@
 namespace OOP;
 
 require_once "./OOP/Auth.php";
+require_once "./OOP/SavingTrait.php";
+
 
 use OOP\Auth;
+use OOP\SavingTrait;
  
 class ProcessRegister extends Auth
 {  
+  use SavingTrait;
+
   private $passwordConfirmation;
 
   public function __construct()

@@ -17,6 +17,8 @@ abstract class Auth extends Middleware
 
   public function authorization()
   {
+    $this->guest();
+    
      if($_SERVER['REQUEST_METHOD' == 'GET']){
         header("Location: index.php");
         die();
@@ -39,15 +41,13 @@ abstract class Auth extends Middleware
     {
       $user = (object)$result->fetch_assoc(); 
       
-      if(password_verify($this->password, $user->password))
-      {
-        $_SESSION['auth'] =[
-          'id' => $user->id,
-          'name' => $user->name,
-          'email' => $user->email
+      if (password_verify($this->password, $user->password)) {
+        $_SESSION['auth'] = [
+            'id' => $user->id,
+            'name' => $user->name,
+            'email' => $user->email
         ];
-      }
-      else {
+    } else {
         $this->errors['email'] = "Email or Password is incorrect";
       }  
     }
@@ -57,8 +57,8 @@ abstract class Auth extends Middleware
     
     if(count($this->errors) > 0){
       $_SESSION['errors'] = $this->errors;
-
-      header("Location: login.php");
+      
+      header("Location: error.php");
       die();
     }
 
