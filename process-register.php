@@ -13,5 +13,4 @@ $processRegisterClass->save();
 $processRegisterClass->authentication();
 $processRegisterClass->redirection();
   
- 
 ?>

@@ -7,8 +7,7 @@
 
   use OOP\Middleware;
   (new Middleware())->guest();
-  // session_destroy();
-
+  session_destroy();
   
   //  $errors = $_SESSION['errors'] ?? []; 
   
@@ -33,7 +32,8 @@
       <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
         <?php
-        echo "<p style='color: red'>". implode(',', $errors['email'] ?? []) .   "</p>";
+        echo "<p style='color: red'>" . implode(',', $errors['email'] ?? []) . "</p>";
+
         ?>
         <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
       </div>

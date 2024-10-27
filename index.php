@@ -10,8 +10,8 @@
   use OOP\ProcessIndex;
 
 (new Middleware())->authenticated();
-
-
+// var_dump($_SESSION['auth']);
+//session_destroy();
 
 ?>
 

@@ -14,7 +14,7 @@ trait SavingTrait
 
     $name = htmlspecialchars($this->name);
     $email =htmlspecialchars($this->email);
-    $password = htmlspecialchars($this->password, PASSWORD_BCRYPT);
+    $password = password_hash($this->password, PASSWORD_BCRYPT);
 
     $sql = "INSERT INTO users (
       name, 

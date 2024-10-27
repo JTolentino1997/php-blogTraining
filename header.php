@@ -11,6 +11,7 @@
       <div class="navbar-nav">
         <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
         <a class="nav-link text-white" href="#">Profile</a>
+        <a class="nav-link text-white" href="./logout.php">Logout</a>
       </div>
     </div>
   </div>
